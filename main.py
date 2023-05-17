@@ -6,6 +6,8 @@ from wallstreet import Stock
 
 import streamlit as st
 
+st.set_page_config(page_title="Stock Trend Visualizer", page_icon='📈', layout="centered", initial_sidebar_state="auto", menu_items=None)
+
 ticker=st.text_input('Ticker',value='AAPL')
 s = Stock(ticker) # stock ticker
 time_horizon = 90 # number of days to look ahead
