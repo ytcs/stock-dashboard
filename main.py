@@ -24,3 +24,5 @@ future = m.make_future_dataframe(periods=time_horizon)
 forecast = m.predict(future)
 fig=m.plot(forecast)
 st.pyplot(fig)
+
+st.dataframe(forecast.tail(time_horizon))
