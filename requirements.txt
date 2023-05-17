@@ -1,0 +1,6 @@
+holidays==0.23
+pandas
+numpy
+plotly
+wallstreet
+prophet
