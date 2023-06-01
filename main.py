@@ -30,7 +30,7 @@ df['volume'] = np.log(df.Volume)
 df['y'] = df['Adj Close']
 df = df[['ds','y','volume']]
 
-st.write(f"Current Price: {df.iloc[-1]['Adj Close']}")
+st.write(f"Current Price: {df.y.values[-1]}")
 m = ph.Prophet(weekly_seasonality=False)
 m.fit(df)
 future = m.make_future_dataframe(periods=time_horizon)
