@@ -2,5 +2,7 @@ holidays==0.23
 pandas
 numpy
 plotly
+scipy
+joblib
 wallstreet
 prophet
