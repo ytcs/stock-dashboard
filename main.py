@@ -63,7 +63,7 @@ def getimpliedprice(ticker,expiration):
   s_put=np.sum(w_put*df.index)/np.sum(w_put)
 
   return {'Date':expiration,'Call Implied':s_call,'Put Implied': s_put}
-
-df_opt = pd.DataFrame([getimpliedprice(ticker,pd.to_datetime(exp,dayfirst=True)) for exp in expirations[:8]]).set_index('Date')
-fig_opt = px.line(df_opt)
-st.plotly_chart(fig_opt)
+with st.spinner('Fetching options prices...'):
+    df_opt = pd.DataFrame([getimpliedprice(ticker,pd.to_datetime(exp,dayfirst=True)) for exp in expirations[:8]]).set_index('Date')
+    fig_opt = px.line(df_opt)
+    st.plotly_chart(fig_opt)
