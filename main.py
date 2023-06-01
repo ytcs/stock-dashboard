@@ -37,7 +37,7 @@ forecast = m.predict(future)
 fig=m.plot(forecast)
 st.pyplot(fig)
 
-st.dataframe(forecast.tail(time_horizon))
+st.dataframe(forecast.tail(time_horizon+1))
 
 # Option expectation structure
 expirations = Call(ticker).expirations
